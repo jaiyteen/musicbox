@@ -1,7 +1,7 @@
 $(function() {
-  $('a').click(function(links) {
+ /* $('a').click(function(links) {
     links.preventDefault();
-  });
+  });*/
   $('.menu').click(function() {
     $('.sidemenu').css('left', '0');
   });
