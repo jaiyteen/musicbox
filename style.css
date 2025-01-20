@@ -647,9 +647,9 @@ a {
 }
 
 /*Ad Banner for Paradox Media*/
-.adBanner{
-  height:auto;
-  width:97%;
+.adBanner {
+  height: auto;
+  width: 97%;
   padding: 10px;
   box-sizing: border-box;
   margin: 10px auto;
@@ -658,7 +658,7 @@ a {
   box-shadow: 0 0.7px 5px rgba(10, 0, 0, 0.3);
 }
 
-#adName{
+#adName {
   font-family: cursive;
   background-color: whitesmoke;
   padding: 2px;
@@ -702,7 +702,7 @@ a {
   margin-bottom: 0;
 }
 
-.sidemenu_socials img{
+.sidemenu_socials img {
   vertical-align: text-top;
 }
 
@@ -944,11 +944,11 @@ a {
 
   .address span {
     display: inline-block;
-text-align: center;
-margin-top: 5px;
-padding: 0 10px;
-font-size: 20px;
-border-right: 1px solid white;
+    text-align: center;
+    margin-top: 5px;
+    padding: 0 10px;
+    font-size: 20px;
+    border-right: 1px solid white;
   }
 
   .address img {
