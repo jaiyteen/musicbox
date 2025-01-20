@@ -1,0 +1,967 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: general;
+  background-color: #E0E0E0;
+  box-sizing: border-box;
+}
+
+#microphone_beep {
+  display: none;
+}
+
+#microphone_beep.js {
+  width: 50%;
+  margin: 45% auto auto auto;
+  display: block;
+  animation: beep 0.8s ease infinite;
+}
+
+@keyframes beep {
+  0% {
+    transform: scale(0.9);
+  }
+
+  25% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+#hide_body {
+  transition: opacity 1s ease;
+  position: relative;
+  animation-name: main;
+  animation-duration: 1s;
+}
+
+#hide_body.js {
+  display: none;
+  transition: opacity 1s ease;
+  position: relative;
+  animation-name: main;
+  animation-duration: 1s;
+}
+
+@keyframes main {
+  from {
+    bottom: -800px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #2269F9;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: general;
+  src: url(Fonts/default.ttf);
+}
+
+:root {
+  --background: linear-gradient(to right, #4BCEB6, #4F8C79);
+  /* --default: #832FB5;*
+ --default: linear-gradient(to right, #4BCEB6, #4F8C79);*/
+  --default: #121C3F;
+  --white: #FAFAFA;
+  --splitgradient: linear-gradient(to bottom, black 50%, #121C3F 50%);
+  --alert: #42445A;
+}
+
+.totop {
+  height: 0.1px;
+  width: 100%;
+  background-color: dimgray;
+}
+
+/*Header*/
+.header {
+  width: 100%;
+  background-color: #E0E0E0;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  z-index: 5;
+}
+
+.header div {
+  display: inline-block;
+  height: inherit;
+  margin-right: -5px;
+}
+
+
+
+/*Musicbox logo*/
+.logo {
+  width: 28%;
+  height: inherit;
+}
+
+.logo a {
+  display: inline-block;
+  height: 50px;
+}
+
+.logo a img {
+  width: 110px;
+  height: 50px;
+  transform: scale(0.9);
+}
+
+/*search bar*/
+.header_center {
+  width: 55%;
+  height: inherit;
+  position: relative;
+}
+
+.header_center a {
+  text-decoration: none;
+  color: white;
+}
+
+/*Join Icon*/
+.header_center .join {
+  background: var(--default);
+  display: inline-block;
+  width: 30%;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+/*Log in Icon*/
+.header_center .login {
+  background: var(--default);
+  display: inline-block;
+  width: 30%;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+/*Menu*/
+.menu {
+  width: 15%;
+  height: inherit;
+  transition: height 1s;
+}
+
+.menu img {
+  width: 100%;
+  height: inherit;
+  transform: scale(0.8);
+}
+
+/*Options*/
+.options {
+  background: var(--default);
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 35px;
+  margin: 0 0 0 -32px;
+}
+
+.options li {
+  list-style-type: none;
+  display: inline-block;
+  height: 35px;
+  box-sizing: border-box;
+  margin-left: -5px;
+  border-right: 1px solid gold;
+  white-space: wrap;
+}
+
+.options li a {
+  display: inline-block;
+  height: 15px;
+  color: #FAFAFA;
+  padding: 10px 5px 10px 5px;
+}
+
+/*side menu*/
+.sidemenu {
+  height: 100%;
+  width: 70%;
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: black;
+  transition: left 0.5s ease;
+  color: white;
+  z-index: 5;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  box-shadow: 0px 4px 8px -2px rgba(9, 30, 66, 0.25), 0px 0px 0px 1px rgba(9, 30, 66, 0.08);
+}
+
+.sidemenu_socials {
+  width: 90%;
+  height: 50px;
+  box-sizing: border-box;
+  padding-left: 5%;
+  margin: 10px auto 0 auto;
+  align-content: center;
+}
+
+.sidemenu_socials img {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.sidemenu .socials {
+  text-align: right;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  width: 83px;
+  color: #2269F9;
+}
+
+.sidemenu_logo a img {
+  width: 110px;
+  height: 50px;
+  transform: scale(0.9);
+}
+
+.cancel {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sidemenu_divider {
+  background-color: white;
+  height: 0.1px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.sidemenu p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.sidemenu span {
+  color: white;
+  background: var(--default);
+  display: block;
+  width: 70%;
+  height: 20px;
+  padding: 10px;
+  border-radius: 30px;
+  margin: auto;
+  text-align: center;
+}
+
+.sidemenu ul {
+  margin-left: -40px;
+}
+
+.sidemenu ul li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
+
+.sidemenu ul li:hover {
+  background-color: var(--white);
+}
+
+.sidemenu ul li a {
+  display: inline-block;
+  padding: 10px;
+  width: 90%;
+  height: 20px;
+}
+
+.sidemenu .search {
+  background-color: gold;
+  height: 35px;
+  width: 90%;
+  margin: auto;
+  border-radius: 30px;
+  position: relative;
+}
+
+.sidemenu input {
+  display: block;
+  border: none;
+  border-radius: 30px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 33px;
+  padding-left: 15px;
+  width: 170px;
+}
+
+.search a {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  height: 3px;
+  width: auto;
+}
+
+.search img {
+  position: absolute;
+  right: 4px;
+  top: 0;
+  height: 30px;
+  width: auto;
+  border-radius: 30px;
+}
+
+
+.heading {
+  background-color: transparent;
+  font-size: 20px;
+  color: var(--default);
+  display: block;
+  position: sticky;
+  left: 5px;
+  margin-bottom: 10px;
+}
+
+/*Trending Segment*/
+.trending_container {
+  height: 235px;
+  width: auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.trending_container_1 .trending_alert {
+  width: 190px;
+  height: 80px;
+  position: absolute;
+  left: 103px;
+  bottom: 50px;
+  background: var(--alert);
+  border-radius: 10px;
+  z-index: 3;
+  opacity: 0;
+  white-space: wrap;
+  transition: opacity 0.4s ease;
+}
+
+.trending_alert:after {
+  content: "";
+  border-color: #42445A transparent transparent transparent;
+  border-width: 7px;
+  border-style: solid;
+  position: absolute;
+  bottom: -14px;
+  left: 42%;
+}
+
+.trending_container .trending_alert a {
+  font-size: 40px;
+  width: 30px;
+  margin-left: 70%;
+  color: #000;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.trending_alert span {
+  text-align: left;
+  display: inline-block;
+  width: 80%;
+  padding: 10px;
+  color: white;
+}
+
+
+.trending_container .trending_container_1 {
+  display: inline-block;
+  height: 195px;
+  width: 92%;
+  background: var(--default);
+  border-radius: 10px;
+  position: relative;
+}
+
+
+.trending_container .trending_container_1 .thumbnail {
+  border: 1px solid whitesmoke;
+  width: 45%;
+  height: 70%;
+  margin: 10px 0 0 10px;
+}
+
+.trending_container_info {
+  width: 45%;
+  height: 71%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.trending_container_info .name_title {
+  display: block;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.container_icon {
+  height: 30px;
+  width: 94%;
+  margin: 3px auto;
+  position: relative;
+}
+
+.container_icon .play {
+  width: 25px;
+  height: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+
+.container_icon .favorite {
+  width: 25px;
+  height: 25px;
+  margin-right: 30px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+
+.container_icon .share {
+  width: 25px;
+  height: 25px;
+  margin-right: 30px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+
+.container_icon .download {
+  width: 25px;
+  height: 25px;
+  margin-right: 30px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+
+/*Creators and DJs*/
+.creators_container {
+  height: 150px;
+  width: auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.creators_container_1 {
+  display: inline-block;
+  height: 105px;
+  width: 42%;
+  background: var(--splitgradient);
+  border-radius: 10px;
+  position: relative;
+}
+
+.creators_container_1 .play {
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+  margin-left: 5px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  display: inline-block;
+  padding: 3px;
+}
+
+.creators_container_1 .trumpet {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 70px;
+  top: 0;
+  transform: scale(2);
+}
+
+.creators_container_1 .name {
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+  color: white;
+}
+
+.creators_container_1 .follow {
+  position: absolute;
+  bottom: 15px;
+  right: 5px;
+}
+
+/*Others*/
+.other_segment {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'trending_artist top_artist'
+    'top_ten_naija featured_artist';
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.other_segment div .heading {
+  color: white;
+  display: block;
+  background-color: var(--default);
+  font-size: 15px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: -10px;
+  padding-top: 10px;
+}
+
+.other_segment a {
+  display: inline-block;
+  border-right: 1px solid gold;
+  border-left: 1px solid gold;
+  padding: 3px;
+  background-color: black;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.other_segment .trending_artist {
+  display: block;
+  height: 150px;
+  width: 95%;
+  background: var(--default);
+  border-radius: 10px;
+  grid-area: trending_artist;
+  margin-bottom: 10px;
+  padding-left: 3px;
+  overflow-y: scroll;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5), 0px 7px 13px -3px rgba(0, 0, 0, 0.3);
+}
+
+.other_segment .top_artist {
+  display: block;
+  height: 150px;
+  width: 95%;
+  background: var(--default);
+  border-radius: 10px;
+  grid-area: top_artist;
+  margin-bottom: 10px;
+  padding-left: 3px;
+  overflow-y: scroll;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5), 0px 7px 13px -3px rgba(0, 0, 0, 0.3);
+}
+
+.other_segment .top_ten_naija {
+  display: block;
+  height: 150px;
+  width: 95%;
+  margin-bottom: 10px;
+  background: var(--default);
+  border-radius: 10px;
+  grid-area: top_ten_naija;
+  padding-left: 3px;
+  overflow-y: scroll;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5), 0px 7px 13px -3px rgba(0, 0, 0, 0.3);
+}
+
+.other_segment .featured_artist {
+  display: block;
+  height: 150px;
+  width: 95%;
+  background: var(--default);
+  border-radius: 10px;
+  grid-area: featured_artist;
+  padding-left: 3px;
+  overflow-y: scroll;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5), 0px 7px 13px -3px rgba(0, 0, 0, 0.3);
+}
+
+.explore {
+  height: 195px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-image: url(/Musicbox/Images/explore_image.jpg);
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+    0px -3px 0px rgba(0, 0, 0, 0.2) inset;
+}
+
+.explore:hover {
+  filter: brightness(0.8);
+  color: white;
+}
+
+.explore span {
+  border-bottom: 2px solid black;
+  display: inline-block;
+  text-align: center;
+  margin-top: 80px;
+
+}
+
+/*Ad Banner for Paradox Media*/
+.adBanner{
+  height:auto;
+  width:97%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: yellowgreen;
+  box-shadow: 0 0.7px 5px rgba(10, 0, 0, 0.3);
+}
+
+#adName{
+  font-family: cursive;
+  background-color: whitesmoke;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+/*Footer*/
+.address {
+  display: block;
+  height: 200px;
+  width: auto;
+  background: var(--default);
+  box-sizing: border-box;
+  margin: 0 0 0;
+}
+
+.container_address_socials {
+  width: 100%;
+  padding-left: 80px;
+  box-sizing: border-box;
+}
+
+.address span {
+  display: inline-block;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 10px;
+  border-right: 1px solid white;
+}
+
+.address img {
+  width: 10%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.address .sidemenu_socials {
+  padding: 10px 10px 10px 100px;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.sidemenu_socials img{
+  vertical-align: text-top;
+}
+
+.container {
+  margin: 5px 5px 0 5px;
+}
+
+@media(min-width: 700px) {
+
+  body,
+  a {
+    font-size: 30px;
+  }
+
+  .header {
+    width: 100%;
+    background-color: #E0E0E0;
+    height: 90px;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 5;
+  }
+
+  .header div {
+    display: inline-block;
+    height: inherit;
+    margin-right: -5px;
+  }
+
+  /*Musicbox logo*/
+  .logo {
+    width: 28%;
+    height: inherit;
+  }
+
+  .logo a {
+    display: inline-block;
+    height: inherit;
+    width: 100%;
+  }
+
+  .logo a img {
+    width: 100%;
+    height: inherit;
+  }
+
+  .header_center {
+    width: 45%;
+    height: inherit;
+    position: relative;
+  }
+
+  .header_center a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+  }
+
+  /*Join Icon*/
+  .header_center .join {
+    background: var(--default);
+    display: inline-block;
+    width: 40%;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+  }
+
+  /*Log in Icon*/
+  .header_center .login {
+    background: var(--default);
+    display: inline-block;
+    width: 40%;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+  }
+
+  /*Menu*/
+  .header .menu {
+    display: none;
+  }
+
+  .options {
+    background: var(--default);
+    overflow-x: scroll;
+    white-space: nowrap;
+    height: 70px;
+    margin: 0 0 0 -32px;
+  }
+
+  .options li {
+    list-style-type: none;
+    display: inline-block;
+    height: 70px;
+    box-sizing: border-box;
+    margin-left: -5px;
+    border-right: 1px solid gold;
+    white-space: wrap;
+  }
+
+  .options li a {
+    display: inline-block;
+    height: 15px;
+    color: #FAFAFA;
+    padding: 18px 5px 10px 5px;
+  }
+
+  .trending_container {
+    width: 50%;
+    margin-bottom: 10px;
+    height: auto;
+    margin: 0 0 10px 20px;
+    float: left;
+  }
+
+  .trending_container_1 .trending_alert {
+    height: 80px;
+    width: 230px;
+    padding: 0;
+    display: block;
+    position: absolute;
+    left: 98px;
+    bottom: 70px;
+    background: var(--alert);
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .trending_container_1 .trending_alert span {
+    display: block;
+    font-size: 20px;
+    padding: 10px;
+    width: 70%;
+    white-space: wrap;
+  }
+
+  .alert_cancel {
+    padding: 0;
+    margin: -5px 0 0 0;
+  }
+
+  .trending_alert:after {
+    content: "";
+    border-color: #42445A transparent transparent transparent;
+    border-width: 7px;
+    border-style: solid;
+    position: absolute;
+    bottom: -14px;
+    left: 42%;
+  }
+
+  .trending_container .trending_container_1 {
+    display: block;
+    height: 250px;
+    width: 100%;
+    background: var(--default);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .creators_container {
+    height: 220px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 15px auto;
+    clear: both;
+    display: block;
+  }
+
+  .creators_container_1 {
+    display: inline-block;
+    height: 160px;
+    width: 27%;
+    background: var(--splitgradient);
+    border-radius: 10px;
+    position: relative;
+    margin-left: 5px;
+  }
+
+  .other_segment {
+    display: block;
+    width: 45%;
+    float: right;
+    position: absolute;
+    top: 210px;
+    right: 10px;
+  }
+
+  .other_segment div .heading {
+    font-size: 30px;
+  }
+
+  .other_segment .trending_artist,
+  .other_segment .top_artist,
+  .other_segment .top_ten_naija,
+  .other_segment .featured_artist {
+    height: 250px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .explore_container {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      'explore_1 explore_2'
+      'explore_3 explore_4';
+  }
+
+  .explore {
+    width: 97%;
+    margin: 0 auto 15px auto;
+  }
+
+  .address {
+    height: auto;
+  }
+
+  .container_address_socials {
+    width: 50%;
+    margin: 20px auto;
+    padding-left: 80px;
+    box-sizing: border-box;
+    height: 90px;
+  }
+
+  .address span {
+    display: inline-block;
+text-align: center;
+margin-top: 5px;
+padding: 0 10px;
+font-size: 20px;
+border-right: 1px solid white;
+  }
+
+  .address img {
+    width: 15%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .address .sidemenu_socials {
+    padding-left: 100px;
+    height: auto;
+    width: 50%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,41 @@
+To prevent the text in the span from overlapping the div and break the line without using the `<br>` element, you can try the following solutions:
+
+Solution 1: Add `word-wrap: break-word;` to the span
+```
+span {
+word-wrap: break-word;
+}
+```
+
+This will break the line when the text reaches the edge of the div.
+
+Solution 2: Add `overflow-wrap: break-word;` to the span
+```
+span {
+overflow-wrap: break-word;
+}
+```
+
+This is similar to the first solution, but it's supported by more browsers.
+
+Solution 3: Add `display: inline-block;` and `width: 100%;` to the span
+```
+span {
+display: inline-block;
+width: 100%;
+}
+```
+
+This will make the span take up the full width of the div and break the line when necessary.
+
+Solution 4: Use `flexbox` on the div
+```
+div {
+display: flex;
+flex-wrap: wrap;
+}
+```
+
+This will make the div a flexible container that wraps its content to a new line when necessary.
+
+Try these solutions and see which one works best for your use case!
